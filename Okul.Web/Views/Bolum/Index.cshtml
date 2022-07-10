@@ -1,0 +1,34 @@
+﻿@model List<Bolum>
+<h2 class="title"><b>Bölümler Listesi</b></h2>
+<table id="tblBolumler" class="table table-condensed">
+    <thead>
+        <tr>
+            <th><b>Bölüm Adı</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Bolum b in Model)
+        {
+            <tr>
+                <td>@b.ad</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<input type="button" id="btnGetCount" value="Toplam Bölüm Sayısı" onclick="CountRows()" class="btn btn--radius-2 btn--blue" />
+<script type="text/javascript">
+    function CountRows() {
+        var totalRowCount = 0;
+        var rowCount = 0;
+        var table = document.getElementById("tblBolumler");
+        var rows = table.getElementsByTagName("tr")
+        for (var i = 0; i < rows.length; i++) {
+            totalRowCount++;
+            if (rows[i].getElementsByTagName("td").length > 0) {
+                rowCount++;
+            }
+        }
+        var message = "\nToplam Bölüm Sayısı: " + rowCount;
+        alert(message);
+    }
+</script>

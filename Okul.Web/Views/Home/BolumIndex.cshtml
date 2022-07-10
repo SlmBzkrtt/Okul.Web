@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/OgrenciLayout.cshtml";
+}
+
+@model List<Bolum>
+<h2 class="title"><b>Bölümler Listesi</b></h2>
+<table id="tblBolumler" class="table table-condensed">
+    <thead>
+        <tr>
+            <th><b>Bölüm Adı</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Bolum b in Model)
+        {
+            <tr>
+                <td>@b.ad</td>
+            </tr>
+        }
+    </tbody>
+</table>

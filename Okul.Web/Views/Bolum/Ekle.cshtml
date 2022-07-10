@@ -1,0 +1,29 @@
+﻿<div>
+    <div class="card card-4">
+        <div class="card-body">
+            <h2 class="title">Bölüm Kayıt Ekranı</h2>
+            <form method="POST">
+                <div class="row row-space">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <label class="labelinput--st">Ad</label>
+                            <input class="input--style-4" type="text" name="ad" id="ad">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="col-12">
+                        <label class="label">Birimler</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            @Html.DropDownList("birimID", ViewBag.BirimListesi as SelectList, "Birim Seçiniz")
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-t-15">
+                    <button class="btn btn--radius-2 btn--blue" type="submit">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

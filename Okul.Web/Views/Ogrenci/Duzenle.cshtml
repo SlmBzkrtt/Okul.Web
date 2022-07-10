@@ -1,0 +1,140 @@
+﻿@model Kullanici
+
+@using (Html.BeginForm("Duzenle", "Ogrenci", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="card card-4">
+        <div class="card-body">
+            <h2 class="title">Öğrenci Düzenleme Ekranı</h2>
+            <form method="POST">
+                <div class="row row-space">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <label class="labelinput--st">Ad</label>
+                            @Html.TextBoxFor(x => x.ad, new { @class = "input--style-4" })
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <label class="label">Soyad</label>
+                            @Html.TextBoxFor(x => x.soyad, new { @class = "input--style-4" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-space">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <label class="label">Öğrenci Numarası</label>
+                            @Html.TextBoxFor(x => x.ogrenciNo, new { @class = "input--style-4" })
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <label class="label">Cinsiyet</label>
+                            <div class="p-t-12">
+                                @if (ViewBag.cinsiyet == "Erkek")
+                                {
+                                    <label class="radio-container m-r-45">
+                                        Erkek
+                                        <input type="radio" checked="checked" value="Erkek" name="cinsiyet" id="cinsiyet">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">
+                                        Kadın
+                                        <input type="radio" value="Kadın" name="cinsiyet" id="cinsiyet">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                }
+                                else if (ViewBag.cinsiyet == "Kadın")
+                                {
+                                    <label class="radio-container m-r-45">
+                                        Erkek
+                                        <input type="radio" value="Erkek" name="cinsiyet" id="cinsiyet">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">
+                                        Kadın
+                                        <input type="radio" checked="checked" value="Kadın" name="cinsiyet" id="cinsiyet">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                }
+                                else
+                                {
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-space">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <label class="label">E-Posta</label>
+                            @Html.TextBoxFor(x => x.eposta, new { @class = "input--style-4" })
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <label class="label">Şifre</label>
+                            @Html.TextBoxFor(x => x.sifre, new { @class = "input--style-4" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12">
+                        <label class="label"><b>Birimler</b></label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            @Html.DropDownList("birimID", ViewBag.birimListesi as SelectList, "Birim Seçiniz")
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12">
+                        <label class="label"><b>Bölümler</b></label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            @Html.DropDownList("bolumID", ViewBag.bolumListesi as SelectList, "Birim Seçiniz")
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label class="form-control" for="customFile">Fotoğraf Seçiniz</label>
+                    <input type="file" class="form-control" id="foto" name="foto" />
+                </div>
+                <div class="p-t-15">
+                    <button class="btn btn--radius-2 btn--blue" type="submit">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+<script src="~/Content/Register/vendor/jquery/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Kategori seçildiğinde bu fonksiyonumuz çalışmaya başlayacaktır.
+        $('#birimID').change(function () {
+            // Seçilen Kategorinin ID sini alıyoruz.
+            var birimID = $(this).val();
+            /*Seçilen KategoriID sini kullanarak
+            Kategori(Controller) sınıfı içerisindeki AltKategorileriGetir
+            Action metodunu çağırıyoruz.
+            Bu metoddan dönen liste sayesinde .each fonksiyonu ile
+            AltKategori isimli DropDownList nesnesini dolduruyoruz.*/
+            if (birimID != null && birimID != '') {
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("BolumleriGetir", "Ogrenci")',
+                    data: { birimID: birimID },
+                    success: function (bolumListe) {
+                        var list = $("#bolumID");
+                        $('#bolumID option').remove();
+                        $.each(bolumListe, function (index, bolum) {
+                            list.append(new Option(bolum.Text, bolum.Value));
+                        });
+                    }
+                });
+            }
+        });
+    });
+</script>

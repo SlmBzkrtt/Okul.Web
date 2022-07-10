@@ -1,0 +1,36 @@
+﻿@model List<Birim>
+
+<h2 class="title"><b>Birimler Listesi</b></h2>
+<table id="tblBirimler" class="table table-condensed">
+    <thead>
+        <tr>
+            <th scope="col"><b>Birim Adı</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Birim b in Model)
+        {
+            <tr>
+                <td>@b.ad</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<input type="button" id="btnGetCount" value="Toplam Birim Sayısı" onclick="CountRows()" class="btn btn--radius-2 btn--blue" />
+<script type="text/javascript">
+    function CountRows() {
+        var totalRowCount = 0;
+        var rowCount = 0;
+        var table = document.getElementById("tblBirimler");
+        var rows = table.getElementsByTagName("tr")
+        for (var i = 0; i < rows.length; i++) {
+            totalRowCount++;
+            if (rows[i].getElementsByTagName("td").length > 0) {
+                rowCount++;
+            }
+        }
+        var message = "\nToplam Birim Sayısı: " + rowCount;
+        alert(message);
+    }
+</script>

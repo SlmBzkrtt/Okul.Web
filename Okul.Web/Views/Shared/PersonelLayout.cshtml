@@ -1,0 +1,181 @@
+﻿@{
+    Kullanici k = (Kullanici)Session["Kullanici"];
+}
+
+<!DOCTYPE HTML>
+<head>
+    <title>Düzce Üniversitesi Kayıt Sistemi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="~/Content/js/jquery.js"></script>
+    <script type="text/javascript" src="~/Content/js/login.js"></script>
+    <script type="text/javascript" src="~/Content/js/Chart.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.easing.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.ulslide.js"></script>
+    <!----Calender -------->
+    <link rel="stylesheet" href="~/Content/css/clndr.css" type="text/css" />
+    <script src="~/Content/js/underscore-min.js"></script>
+    <script src="~/Content/js/moment-2.2.1.js"></script>
+    <script src="~/Content/js/clndr.js"></script>
+    <script src="~/Content/js/site.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Title Page-->
+    <title>Öğrenci Kayıt Sistemi</title>
+
+    <!-- Icons font CSS-->
+    <link href="~/Content/Register/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="~/Content/Register/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="~/Content/Register/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/Content/Register/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="~/Content/Register/css/main.css" rel="stylesheet" media="all">
+    <!----End Calender -------->
+    <style>
+        .menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .acilir-menu {
+            display: none;
+            position: absolute;
+            min-width: 400px;
+        }
+
+        .menu:hover .acilir-menu {
+            display: block;
+        }
+
+        .acilir-menu {
+            display: none;
+            position: absolute;
+            background-color: #394264;
+            min-width: 160px;
+        }
+
+            .acilir-menu a {
+                display: block;
+                text-align: left;
+            }
+
+        .menu:hover .acilir-menu {
+            display: block;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="display:flex; flex-direction:column;
+         justify-content:space-between;">
+        <header>
+            <div class="header">
+                <div class="header_top">
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="/Ogrenci/Index"><i><img src="~/Content/images/ogrenci.png" alt="" /></i>Öğrenciler</a>
+                                <div class="acilir-menu">
+                                    <a href="/Ogrenci/Index">Öğrenci Listesi</a>
+                                    <a href="/Ogrenci/Ekle">Öğrenci Ekle</a>
+                                    <a href="/Ogrenci/Listeleme">Öğrenci Düzenle</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <script type="text/javascript" src="js/responsive-nav.js"></script>
+                    </div>
+                    <div class="menu">
+                        <ul class="nav">
+                            <li>
+                                <a href="/Birim/Index"><i><img src="~/Content/images/birim.png" alt="" /></i>Birimler</a>
+                                <div class="acilir-menu">
+                                    <a href="/Birim/Index">Birim Listesi</a>
+                                    <a href="/Birim/Ekle">Birim Ekle</a>
+                                    <a href="/Birim/Listeleme">Birim Düzenle</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <script type="text/javascript" src="js/responsive-nav.js"></script>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="/Bolum/Index"><i><img src="~/Content/images/bolum.png" alt="" /></i>Bölümler</a>
+                                <div class="acilir-menu">
+                                    <a href="/Bolum/Index">Bölüm Listesi</a>
+                                    <a href="/Bolum/Ekle">Bölüm Ekle</a>
+                                    <a href="/Bolum/Listeleme">Bölüm Düzenle</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <script type="text/javascript" src="js/responsive-nav.js"></script>
+                    </div>
+                    <div class="profile_details">
+                        <div id="loginContainer">
+                            <a id="loginButton" class=""><span>Ben</span></a>
+                            <div id="loginBox">
+                                <form id="loginForm">
+                                    <fieldset id="body">
+                                        <div class="user-info">
+                                            <h4>Merhaba,<a href="#">@k.ad @k.soyad</a></h4>
+                                            <ul>
+                                                <li class="logout"><a href="/Login/Index">Çıkış</a></li>
+                                            </ul>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="profile_img">
+                            <a><img style="height:50px;width:55px;" src="~/Content/images/kullanici/@k.foto" alt="" />	</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <content>
+        <div class="main">
+            <div class="wrap">
+                @RenderBody()
+            </div>
+        </div>
+    </content>
+</body>
+<footer>
+    <div class="row footer">
+        <div class="col-12">
+            <div class="copy-right">
+                <p>© 2022 Designed by <a href="https://www.youtube.com/c/SelimBozkurt/videos">Selim BOZKURT</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="~/Content/Register/vendor/jquery/jquery.min.js"></script>
+<script src="~/Content/Register/vendor/select2/select2.min.js"></script>
+<script src="~/Content/Register/vendor/datepicker/moment.min.js"></script>
+<script src="~/Content/Register/vendor/datepicker/daterangepicker.js"></script>
+<script src="~/Content/Register/js/global.js"></script>

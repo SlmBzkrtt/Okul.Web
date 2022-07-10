@@ -1,0 +1,45 @@
+﻿@model List<Bolum>
+
+<h2 class="title"><b>Bölümler Listesi</b></h2>
+<table id="tblBolumler" class="table table-condensed">
+    <thead>
+        <tr>
+            <th class="col-9"><b>Bölüm Adı</b></th>
+            <th class="col-3" style="text-align: center;"><b>İşlemler</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Bolum b in Model)
+        {
+            <tr>
+                <td>@b.ad</td>
+                <td style="text-align:center;">
+                    <a href="/Bolum/Duzenle/@b.bolumID" class="btn btn-info btn-sm" title="Düzenle">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a href="/Bolum/Sil/@b.bolumID" class="btn btn-danger btn-sm" title="Sil" onclick="return confirm('Silmek istediğinizden emin misiniz ?')">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<input type="button" id="btnGetCount" value="Toplam Birim Sayısı" onclick="CountRows()" class="btn btn--radius-2 btn--blue" />
+<script type="text/javascript">
+    function CountRows() {
+        var totalRowCount = 0;
+        var rowCount = 0;
+        var table = document.getElementById("tblBolumler");
+        var rows = table.getElementsByTagName("tr")
+        for (var i = 0; i < rows.length; i++) {
+            totalRowCount++;
+            if (rows[i].getElementsByTagName("td").length > 0) {
+                rowCount++;
+            }
+        }
+        var message = "\nToplam Birim Sayısı: " + rowCount;
+        alert(message);
+    }
+</script> 

@@ -1,0 +1,38 @@
+﻿@model List<Kullanici>
+
+@{
+    Layout = "~/Views/Shared/OgrenciLayout.cshtml";
+}
+
+<h2 class="title"><b>Öğrenci Listesi</b></h2>
+<table id="tblOgrenciler" class="table table-condensed">
+    <thead>
+        <tr>
+            <th class="col-2"><b>Resim</b></th>
+            <th class="col-2"><b>Öğrenci Numarası</b></th>
+            <th class="col-2"><b>Ad</b></th>
+            <th class="col-2"><b>Soyad</b></th>
+            <th class="col-2"><b>Birim</b></th>
+            <th class="col-2"><b>Bölüm</b></th>
+            <th class="col-2" style="text-align: center;"><b>İşlemler</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Kullanici k in Model)
+        {
+            <tr>
+                <td><img src="~/Content/images/kullanici/@k.foto" alt="" height=50 width=80 /></td>
+                <td>@k.ogrenciNo</td>
+                <td>@k.ad</td>
+                <td>@k.soyad</td>
+                <td>@k.birimID</td>
+                <td>@k.bolumID</td>
+                <td style="text-align:center;">
+                    <a href="/Home/OgrenciDuzenle/@k.kullaniciID" class="btn btn-info btn-sm" title="Düzenle">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

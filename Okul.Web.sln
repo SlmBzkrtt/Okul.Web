@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okul.Web", "Okul.Web\Okul.Web.csproj", "{D52B9C2C-C09B-4C35-AC12-104ABEBEE07B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okul.Model", "Okul.Model\Okul.Model.csproj", "{2B4EAB81-EDAF-4986-A102-C9190A35BEF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D52B9C2C-C09B-4C35-AC12-104ABEBEE07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52B9C2C-C09B-4C35-AC12-104ABEBEE07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52B9C2C-C09B-4C35-AC12-104ABEBEE07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52B9C2C-C09B-4C35-AC12-104ABEBEE07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4EAB81-EDAF-4986-A102-C9190A35BEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4EAB81-EDAF-4986-A102-C9190A35BEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4EAB81-EDAF-4986-A102-C9190A35BEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4EAB81-EDAF-4986-A102-C9190A35BEF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {414575FA-5D2B-4677-BFEF-6FAB2C82B0A9}
+	EndGlobalSection
+EndGlobal

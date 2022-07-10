@@ -1,0 +1,403 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D52B9C2C-C09B-4C35-AC12-104ABEBEE07B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Okul.Web</RootNamespace>
+    <AssemblyName>Okul.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44309</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ColorLib\css\style.css" />
+    <Content Include="Content\ColorLib\fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="Content\ColorLib\fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\ColorLib\fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
+    <Content Include="Content\ColorLib\images\signin-image.jpg" />
+    <Content Include="Content\ColorLib\images\signup-image.jpg" />
+    <Content Include="Content\ColorLib\index.html" />
+    <Content Include="Content\ColorLib\js\main.js" />
+    <Content Include="Content\ColorLib\readme.txt" />
+    <Content Include="Content\ColorLib\vendor\jquery\jquery-ui.min.js" />
+    <Content Include="Content\ColorLib\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\css\clndr.css" />
+    <Content Include="Content\css\nav.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\images\arrow-left.png" />
+    <Content Include="Content\images\arrow-right.png" />
+    <Content Include="Content\images\Birim.png" />
+    <Content Include="Content\images\Bolum.png" />
+    <Content Include="Content\images\chart.png" />
+    <Content Include="Content\images\clouds.png" />
+    <Content Include="Content\images\comments.png" />
+    <Content Include="Content\images\download.png" />
+    <Content Include="Content\images\events-hover.png" />
+    <Content Include="Content\images\events.png" />
+    <Content Include="Content\images\facebook.png" />
+    <Content Include="Content\images\facebook_icon.png" />
+    <Content Include="Content\images\favourite.png" />
+    <Content Include="Content\images\follow_user.png" />
+    <Content Include="Content\images\google+.png" />
+    <Content Include="Content\images\graph.png" />
+    <Content Include="Content\images\invites-hover.png" />
+    <Content Include="Content\images\invites.png" />
+    <Content Include="Content\images\likes.png" />
+    <Content Include="Content\images\location.png" />
+    <Content Include="Content\images\lock.png" />
+    <Content Include="Content\images\loginArrow.png" />
+    <Content Include="Content\images\mail-hover.png" />
+    <Content Include="Content\images\mail.png" />
+    <Content Include="Content\images\nav.png" />
+    <Content Include="Content\images\ogrenci.png" />
+    <Content Include="Content\images\profile_img150x150.jpg" />
+    <Content Include="Content\images\profile_img40x40.jpg" />
+    <Content Include="Content\images\settings-hover.png" />
+    <Content Include="Content\images\settings.png" />
+    <Content Include="Content\images\statistics-hover.png" />
+    <Content Include="Content\images\statistics.png" />
+    <Content Include="Content\images\sun.png" />
+    <Content Include="Content\images\sun_icon1.png" />
+    <Content Include="Content\images\sun_icon2.png" />
+    <Content Include="Content\images\tweets.png" />
+    <Content Include="Content\images\upload.png" />
+    <Content Include="Content\images\user.png" />
+    <Content Include="Content\images\views.png" />
+    <Content Include="Content\js\Chart.js" />
+    <Content Include="Content\js\clndr.js" />
+    <Content Include="Content\js\jquery.easing.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.ulslide.js" />
+    <Content Include="Content\js\json2.js" />
+    <Content Include="Content\js\login.js" />
+    <Content Include="Content\js\moment-2.2.1.js" />
+    <Content Include="Content\js\responsive-nav.js" />
+    <Content Include="Content\js\site.js" />
+    <Content Include="Content\js\underscore-min.js" />
+    <Content Include="Content\Register\css\main.css" />
+    <Content Include="Content\Register\js\global.js" />
+    <Content Include="Content\Register\vendor\datepicker\daterangepicker.css" />
+    <Content Include="Content\Register\vendor\datepicker\daterangepicker.js" />
+    <Content Include="Content\Register\vendor\datepicker\moment.min.js" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\css\font-awesome.css" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\HELP-US-OUT.txt" />
+    <Content Include="Content\Register\vendor\jquery\jquery.js" />
+    <Content Include="Content\Register\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\Register\vendor\mdi-font\css\material-design-iconic-font.css" />
+    <Content Include="Content\Register\vendor\mdi-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\Register\vendor\mdi-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\Register\vendor\select2\select2.min.css" />
+    <Content Include="Content\Register\vendor\select2\select2.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BirimController.cs" />
+    <Compile Include="Controllers\BolumController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OgrenciController.cs" />
+    <Compile Include="DTOs\KullaniciDTO.cs" />
+    <Compile Include="Enums\Yetki.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\OgrenciRequest\EkleOgrenciRequest.cs" />
+    <Compile Include="Tools\ImageManager.cs" />
+    <Compile Include="Tools\ImageResult.cs" />
+    <Compile Include="Tools\_SecurityFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\ColorLib\.sass-cache\21880c0ffe15753a53f8402e9f64e1077e071510\style.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\extend.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\fonts.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\global.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\minxi.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\variables.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\3948936f84e1a30385e73a9be140b58b48c82e15\style.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\main.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\responsive.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\extend.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\fonts.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\global.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\minxi.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\variables.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\9dc767a56f3dc2f8a933300255cd2265f13191d4\main.scssc" />
+    <Content Include="Content\ColorLib\.sass-cache\9dc767a56f3dc2f8a933300255cd2265f13191d4\responsive.scssc" />
+    <Content Include="Content\ColorLib\css\style.css.map" />
+    <Content Include="Content\ColorLib\fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\ColorLib\fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\ColorLib\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\ColorLib\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700italic.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700italic.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700italic.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-italic.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-italic.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-italic.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-regular.eot" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
+    <Content Include="Content\ColorLib\fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <Content Include="Content\ColorLib\scss\common\extend.scss" />
+    <Content Include="Content\ColorLib\scss\common\fonts.scss" />
+    <Content Include="Content\ColorLib\scss\common\global.scss" />
+    <Content Include="Content\ColorLib\scss\common\minxi.scss" />
+    <Content Include="Content\ColorLib\scss\common\variables.scss" />
+    <Content Include="Content\ColorLib\scss\layouts\main.scss" />
+    <Content Include="Content\ColorLib\scss\layouts\responsive.scss" />
+    <Content Include="Content\ColorLib\scss\style.scss" />
+    <Content Include="Content\fonts\Amble-Regular-webfont.ttf" />
+    <Content Include="Content\images\icons.psd" />
+    <Content Include="Content\images\Thumbs.db" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Register\vendor\font-awesome-4.7\fonts\FontAwesome.otf" />
+    <Content Include="Content\Register\vendor\mdi-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\Register\vendor\mdi-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\Register\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\Register\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\PersonelLayout.cshtml" />
+    <Content Include="Views\Ogrenci\Ekle.cshtml" />
+    <Content Include="Views\Ogrenci\Index.cshtml" />
+    <Content Include="Views\Birim\Index.cshtml" />
+    <Content Include="Views\Birim\Ekle.cshtml" />
+    <Content Include="Views\Bolum\Index.cshtml" />
+    <Content Include="Views\Bolum\Ekle.cshtml" />
+    <Content Include="Views\Birim\Listeleme.cshtml" />
+    <Content Include="Views\Birim\Duzenle.cshtml" />
+    <Content Include="Views\Bolum\Listeleme.cshtml" />
+    <Content Include="Views\Bolum\Duzenle.cshtml" />
+    <Content Include="Views\Ogrenci\Listeleme.cshtml" />
+    <Content Include="Views\Ogrenci\Duzenle.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\BolumIndex.cshtml" />
+    <Content Include="Views\Home\BirimIndex.cshtml" />
+    <Content Include="Views\Shared\OgrenciLayout.cshtml" />
+    <Content Include="Views\Home\OgrenciListele.cshtml" />
+    <Content Include="Views\Home\OgrenciDuzenle.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\images\kullanici\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Okul.Model\Okul.Model.csproj">
+      <Project>{2b4eab81-edaf-4986-a102-c9190a35bef0}</Project>
+      <Name>Okul.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64891</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44309/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

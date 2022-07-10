@@ -1,0 +1,24 @@
+﻿@model Birim
+
+<div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Birim Düzenle</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    @using (Html.BeginForm("Duzenle","Birim",FormMethod.Post))
+    {
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ad</label>
+                @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+                @*<input type="text" class="form-control" name="ad" id="ad" placeholder="Ad" value="@Model.ad">*@
+            </div>
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-info">Düzenle</button>
+        </div>
+    }
+</div>
